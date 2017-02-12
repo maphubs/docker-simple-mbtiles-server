@@ -1,0 +1,9 @@
+FROM mhart/alpine-node:latest
+MAINTAINER Kristofor Carle <kris@maphubs.com>
+RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+    apk add --update icu@edge icu-libs@edge mapnik@testing python
+RUN apk add --update bash make
+USER root
+RUN npm install -g tessera && npm install -g mbtiles 
+ENTRYPOINT ["tessera"]

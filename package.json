@@ -1,0 +1,16 @@
+{
+  "name": "simple-mbtiles-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "preversion": "",
+    "version": "",
+    "postversion": "git push && git push --tags",
+    "deploy-patch": "npm version patch --force -m \"version %s\"",
+    "deploy-minor": "npm version minor --force -m \"version %s\""
+  },
+  "author": "Kristofor Carle <kris@maphubs.com>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+  }
+}

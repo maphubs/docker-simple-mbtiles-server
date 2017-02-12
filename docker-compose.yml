@@ -1,0 +1,13 @@
+version: '2'
+services:
+  simple-mbtiles-server:
+    build: ./
+    command: mbtiles://./test.mbtiles
+    environment:
+      - PORT=8081
+      - CACHE_SIZE=256
+      - SOURCE_CACHE_SIZE=1
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./data:/data
